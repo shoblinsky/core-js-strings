@@ -239,15 +239,9 @@ function endsWith(str, substr) {
 function formatTime(minutes, seconds) {
   const normalizedMinutes = String(Math.abs(minutes));
   const normalizedSeconds = String(Math.abs(seconds));
-  const min =
-    normalizedMinutes.length === 1
-      ? `0${normalizedMinutes}`
-      : normalizedMinutes;
-  const sec =
-    normalizedSeconds.length === 1
-      ? `0${normalizedSeconds}`
-      : normalizedSeconds;
-  return `${min}:${sec}`;
+  const finalMins = normalizedMinutes.padStart(2, '0');
+  const finalSecs = normalizedSeconds.padStart(2, '0');
+  return `${finalMins}:${finalSecs}`;
 }
 
 /**
